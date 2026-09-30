@@ -2,98 +2,52 @@
 
 [Français](#français) | [English](#english)
 
----
-
 ## Français
 
-Récupérez facilement vos notes Quentry sécurisées après export ou désinstallation de l'application mobile.
+Un petit programme Windows pour relire vos notes Quentry à partir d'une sauvegarde, par exemple après avoir changé de téléphone ou désinstallé l'application.
 
-### Téléchargement et installation
+### Installation
 
-1. Cliquez sur le bouton vert **Code** en haut de cette page
-2. Sélectionnez **Download ZIP**
-3. Extrayez le fichier ZIP téléchargé
-4. Double-cliquez sur **Quentry-Recovery-1.0.0.exe**
+Téléchargez le dépôt (bouton vert **Code**, puis **Download ZIP**), décompressez-le et lancez `Quentry-Recovery-1.0.0.exe`. Il n'y a rien à installer.
 
-C'est tout ! Aucune installation requise.
+Au premier lancement, Windows affiche sans doute un avertissement. C'est parce que le programme n'est pas signé numériquement, un certificat de signature coûte cher pour un petit projet gratuit. Cliquez sur « Informations complémentaires » puis « Exécuter quand même ».
 
 ### Utilisation
 
-1. **Sélectionner le fichier backup** — Cliquez sur "Choisir un fichier" et sélectionnez votre fichier `.qb` exporté depuis l'app Quentry sur mobile
-
-2. **Entrer votre PIN** — Saisissez le PIN que vous avez défini lors de la création du backup
-
-3. **Visualiser vos notes** — Une fois déverrouillées, vos notes s'affichent avec leur formatage d'origine (gras, italique, listes, etc.)
-
-4. **Copier ou exporter** — Utilisez les boutons pour :
-   - Copier une note dans le presse-papiers
-   - Exporter toutes les notes en JSON
-   - Exporter toutes les notes en TXT
+1. Choisissez le fichier `.qb` que vous avez exporté depuis l'application Quentry.
+2. Tapez le code PIN choisi au moment de la sauvegarde.
+3. Vos notes s'affichent avec leur mise en forme (gras, italique, listes).
+4. Vous pouvez copier une note, ou exporter toutes les notes en JSON ou en TXT.
 
 ### Sécurité
 
-- **100% hors-ligne** — Aucune donnée n'est envoyée sur Internet
-- **PIN jamais stocké** — Votre PIN est utilisé uniquement pour le décryptage en mémoire
-- **Chiffrement fort** — AES-256 + HMAC-SHA256 + PBKDF2 (600 000 itérations)
+Le programme ne se connecte jamais à Internet, tout se passe sur votre ordinateur. Le PIN n'est gardé en mémoire que le temps de déchiffrer la sauvegarde, il n'est enregistré nulle part.
 
-### FAQ
+La sauvegarde est chiffrée en AES-256 avec un contrôle d'intégrité HMAC-SHA256, et la clé est dérivée du PIN par PBKDF2 avec 600 000 itérations. C'est ce qui rend le déchiffrement un peu lent, la barre de progression vous indique où il en est.
 
-#### J'ai oublié mon PIN
-Sans le PIN, impossible de récupérer vos notes. C'est une mesure de sécurité par conception.
-
-#### Le décryptage prend du temps
-C'est normal. Le processus utilise 600 000 itérations pour protéger vos données. La barre de progression indique l'avancement.
-
-#### Windows me demande confirmation au lancement
-Cliquez sur "Informations complémentaires" puis "Exécuter quand même". L'application n'est pas signée numériquement mais est 100% sûre.
-
----
+Si vous avez oublié votre PIN, les notes ne peuvent pas être récupérées, ni par vous ni par moi. C'est voulu.
 
 ## English
 
-Easily recover your secure Quentry notes after exporting or uninstalling the mobile app.
+A small Windows program to read your Quentry notes from a backup, for example after switching phones or uninstalling the app.
 
-### Download and Installation
+### Installation
 
-1. Click the green **Code** button at the top of this page
-2. Select **Download ZIP**
-3. Extract the downloaded ZIP file
-4. Double-click on **Quentry-Recovery-1.0.0.exe**
+Download the repository (green **Code** button, then **Download ZIP**), unzip it and run `Quentry-Recovery-1.0.0.exe`. Nothing to install.
 
-That's it! No installation required.
+On first launch, Windows will probably show a warning. That's because the program isn't digitally signed, a code signing certificate is expensive for a small free project. Click "More info", then "Run anyway".
 
-### Usage
+### How to use it
 
-1. **Select the backup file** — Click "Choose a file" and select your `.qb` file exported from the Quentry mobile app
-
-2. **Enter your PIN** — Type the PIN you set when creating the backup
-
-3. **View your notes** — Once unlocked, your notes are displayed with their original formatting (bold, italic, lists, etc.)
-
-4. **Copy or export** — Use the buttons to:
-   - Copy a note to clipboard
-   - Export all notes as JSON
-   - Export all notes as TXT
+1. Pick the `.qb` file you exported from the Quentry app.
+2. Type the PIN you chose when creating the backup.
+3. Your notes appear with their formatting (bold, italic, lists).
+4. You can copy a single note, or export all notes as JSON or TXT.
 
 ### Security
 
-- **100% offline** — No data is sent over the Internet
-- **PIN never stored** — Your PIN is only used for in-memory decryption
-- **Strong encryption** — AES-256 + HMAC-SHA256 + PBKDF2 (600,000 iterations)
+The program never connects to the Internet, everything happens on your computer. The PIN is only kept in memory while the backup is being decrypted, it is never saved anywhere.
 
-### FAQ
+The backup is encrypted with AES-256 with an HMAC-SHA256 integrity check, and the key is derived from your PIN with PBKDF2 at 600,000 iterations. That's why decryption takes a moment, the progress bar shows how far along it is.
 
-#### I forgot my PIN
-Without the PIN, it's impossible to recover your notes. This is a security measure by design.
-
-#### Decryption takes time
-This is normal. The process uses 600,000 iterations to protect your data. The progress bar shows the advancement.
-
-#### Windows asks for confirmation on launch
-Click "More info" then "Run anyway". The application is not digitally signed but is 100% safe.
-
----
-
-## License
-
-MIT
+If you forget your PIN, the notes cannot be recovered, not by you and not by me. That's on purpose.
