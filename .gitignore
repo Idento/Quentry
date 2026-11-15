@@ -1,2 +1,6 @@
 /quentry-recovery-app/*
 /tools/*
+!/tools/quentry_recovery.py
+!/tools/test_quentry_recovery.py
+# L'exécutable est publié dans les Releases, pas dans le dépôt.
+*.exe
